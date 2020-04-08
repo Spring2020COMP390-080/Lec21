@@ -24,6 +24,11 @@ public class TopologicalSort {
 //			vq.add(init);
 //		}
 		
+		/* These lines fix the bug. The issue is that our
+		 * eligible vertex queue needs to start with ALL
+		 * zero in-degree vertices on it.
+		 */
+		
 		for (Vertex v : g.getVertices()) {
 			if (g.getInDegreeOfVertex(v) == 0) {
 				vq.add(v);
